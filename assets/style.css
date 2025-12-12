@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #2e8b57, #a8d5ba);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.balance-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+#balance-amount {
+  margin-bottom: 16px;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.balance-container {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #a8d5ba, #6b8e23);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.balance-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.summary-item {
+  padding: 16px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.summary-item__title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.summary-item__amount {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.summary-item.balance-income {
+  color: #059669;
+  border-color: #059669;
+}
+
+.summary-item.balance-expense {
+  color: #dc2626;
+  border-color: #dc2626;
+}
