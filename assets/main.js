@@ -81,7 +81,7 @@ function createTransactionEl({ id, description, amount }) {
   li.innerHTML = `
     <span class="transaction-item__desc">${description}</span>
     <span class="transaction-item__amount">
-      ${amount}
+      ${formatCurrency(amount)}
       <button class="transaction-item__delete-btn">X</button>
     </span>
   `;
@@ -99,12 +99,20 @@ function updateBalance() {
     else expense += t.amount;
   });
 
-  incomeAmountEl.textContent = income;
-  expenseAmountEl.textContent = expense;
-  balanceAmountEl.textContent = income + expense;
+  incomeAmountEl.textContent = formatCurrency(income);
+  expenseAmountEl.textContent = formatCurrency(expense);
+  balanceAmountEl.textContent = formatCurrency(income + expense);
 }
 
 // Save transaction
 function saveTransactions() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
+}
+
+// Format currency
+function formatCurrency(number) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(number);
 }
